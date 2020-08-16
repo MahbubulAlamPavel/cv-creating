@@ -4,19 +4,12 @@
     <title>Login Here</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/login-style.css">
+    <link rel="stylesheet" href="../style/home-style.css" >
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="row-top">
-    <img class="img" src="../logo.png" alt="HTML5 Icon" align="left"/>
-    <div class="column-top">
-        <li><a href="home.php" class="navigation">Home</a></li>
-        <li><a href="dashboard.php" class="navigation">Dashboard</a></li>
-        <li><a href="#" class="navigation">About Us</a></li>
-        <li><a href="login.php" class="navigation">Login</a></li>
-    </div>
-</div>
+<?php include 'header.php' ?>
 <div class="content">
     <div class="image" >
         <img src="../cv.svg">
