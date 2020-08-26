@@ -5,12 +5,13 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/registration-style.css">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <script type="text/javascript" src="../js/registration.js"></script>
 
 </head>
 <body>
 <?php include 'header.php' ?>
 <div class="content">
-    <form class="reg-form" method="post" action="data.php">
+    <form class="reg-form" method="post" action="data.php" onsubmit="return validation()">
         <fieldset>
             <legend>
                 <div class="heading">Registration  Form</div>
@@ -19,49 +20,49 @@
                 <legend>
                     <div class="name" >First Name</div>
                 </legend>
-                <input type="text" name="firstName" placeholder="Enter your first name">
+                <input type="text" name="firstName" placeholder="Enter your first name" required>
             </fieldset>
 
             <fieldset>
                 <legend>
                     <div class="name">Last Name</div>
                 </legend>
-                <input type="text" name="lastName" placeholder="Enter your Last name">
+                <input type="text" name="lastName" placeholder="Enter your Last name" required>
             </fieldset>
 
             <fieldset>
                 <legend>
                     <div class="email">Email</div>
                 </legend>
-                <input type="email" name="email" placeholder="Enter your Email">
+                <input type="email" id="email" name="email" placeholder="example@mail.com">
             </fieldset>
 
             <fieldset>
                 <legend>
                     <div class="pass">Password</div>
                 </legend>
-                <input type="password" name="password" placeholder="Enter your Password">
+                <input type="password" id="password" name="password" placeholder="Enter your Password">
             </fieldset>
 
             <fieldset>
                 <legend>
                     <div class="number">Mobile Number</div>
                 </legend>
-                <input type="phone" name="phoneNumber" placeholder="Enter mobile number">
+                <input type="phone" name="phoneNumber" placeholder="Enter mobile number" required>
             </fieldset>
 
             <fieldset>
                 <legend>
                     <div class="date">Date Of Birth</div>
                 </legend>
-                <input type="date" name="birthDate" placeholder="MM/DD/YYYY">
+                <input type="date" name="birthDate" placeholder="MM/DD/YYYY" required>
             </fieldset>
 
             <fieldset>
                 <legend>
                     <div class="gender">Gender</div>
                 </legend>
-                <select class="gender-option" name="gender">
+                <select class="gender-option" name="gender" required>
                     <option selected>Male</option>
                     <option>Female</option>
                     <option>Other</option>
