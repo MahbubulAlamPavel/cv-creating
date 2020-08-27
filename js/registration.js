@@ -1,30 +1,51 @@
 function validation() {
 
     var email = document.getElementById('email').value;
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var password = document.getElementById("password").value;
+    var phone = document.getElementById("phone").value;
 
 
-    if (email == "") {
-        alert("Please enter your email address!");
+
+    if (email === "") {
+        alert("Please Enter Your Email Address!");
         return false;
-    } else {
-        if (email.match(mailformat)) {
-            return true;
-        } else {
-            alert("You have entered an invalid email address!");
-            return false;
-        }
+    }
+    if(email.indexOf('@') <= 0 ){
+        alert(" ** @ Invalid Position");
+        return false;
     }
 
-    var password = document.getElementById("password").value;
-        if (password == "") {
-            alert("Please enter a password!");
+    if((email.charAt(email.length-4)!=='.') && (email.charAt(email.length-3)!=='.')){
+        alert(" ** .com Invalid Position");
+        return false;
+    }
+
+
+    if (password === "") {
+            alert("Please Enter a Password!");
             return false
-        } else {
-            return true;
         }
 
 
 
+
+    var pass =  /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+    if (!pass.test(password)) {
+        alert("Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
+        return false;
+    }
+
+    if (phone === "") {
+        alert("Please Enter Your 11 Digit Mobile Number!");
+        return false
+    }
+
+
+
+    var mobile = /^\d{11}$/;
+    if(!mobile.test(phone)){
+        alert("Invalid Mobile Number");
+        return false;
+    }
 
 }

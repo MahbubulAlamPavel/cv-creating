@@ -34,7 +34,7 @@
                 <legend>
                     <div class="email">Email</div>
                 </legend>
-                <input type="email" id="email" name="email" placeholder="example@mail.com">
+                <input type="text" id="email" name="email" placeholder="example@mail.com">
             </fieldset>
 
             <fieldset>
@@ -48,7 +48,7 @@
                 <legend>
                     <div class="number">Mobile Number</div>
                 </legend>
-                <input type="phone" name="phoneNumber" placeholder="Enter mobile number" required>
+                <input id="phone" type="text" name="phoneNumber" placeholder="Enter mobile number">
             </fieldset>
 
             <fieldset>
