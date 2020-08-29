@@ -15,9 +15,11 @@ if(isset($_POST['submit'])) {
              VALUES('{$firstName}','{$lastName}','{$email}','{$hash}','{$phoneNumber}','{$birthDate}','{$gender}') ";
 
     if (mysqli_query($connection, $query)) {
-        echo "New record created successfully !";
+        echo("<script>alert('Successful Registration')</script>");
+        echo("<script>window.location = 'login.php';</script>");
     }else{
-        echo "Error: " . $query . " " . mysqli_error($connection);
+        echo("<script>alert('Already Registered!')</script>");
+        echo("<script>window.location = 'registration.php';</script>");
  }
     mysqli_close($connection);
 }
