@@ -15,11 +15,32 @@ if(isset($_POST['submit'])) {
              VALUES('{$firstName}','{$lastName}','{$email}','{$hash}','{$phoneNumber}','{$birthDate}','{$gender}') ";
 
     if (mysqli_query($connection, $query)) {
-        echo("<script>alert('Successful Registration')</script>");
+        echo("<script>alert('Successful Registration');</script>");
         echo("<script>window.location = 'login.php';</script>");
     }else{
-        echo("<script>alert('Already Registered!')</script>");
+        echo("<script>alert('This Email Already Exist');</script>");
         echo("<script>window.location = 'registration.php';</script>");
- }
+    }
     mysqli_close($connection);
+}
+if(isset($_POST['login'])){
+    $email= $_POST['email'];
+    $password= $_POST['password'];
+
+    $sql = "select * from registration where email = '$email'";
+    $result = mysqli_query($connection, $sql);
+
+ if($rows = mysqli_fetch_assoc($result)){
+     $db_password = $rows['password'];
+     if(password_verify($password,$db_password)){
+         header("location: dashboard.php");
+     }else{
+         echo "<script>alert('Wrong Password')</script>";
+         echo("<script>window.location = 'login.php';</script>");
+
+     }
+ }else{
+     echo "<script>alert('Incorrect Email')</script>";
+     echo("<script>window.location = 'login.php';</script>");
+ }
 }

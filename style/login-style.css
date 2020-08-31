@@ -52,7 +52,7 @@ h4{
     display: flex;
     display: inline-block;
     float: left;
-    padding-top: 12px;
+    padding-top: 5px;
     padding-right: 8px;
 }
 .login input[type="checkbox"]{
