@@ -15,7 +15,17 @@ session_start();
             <h1>Create Your Standard Resume</h1>
             <p>Follow a few steps to build your perfect resume and get hired faster</p>
             <div class="build">
+                <?php
+                if(isset($_SESSION['loggedin'])):
+                ?>
+                <li><a class="build" href="dashboard.php">Build Now</a> </li>
+                <?php
+                else:
+                ?>
                 <li><a class="build" href="login.php">Build Now</a> </li>
+                <?php
+                endif;
+                ?>
             </div>
         </div>
 
