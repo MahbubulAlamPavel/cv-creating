@@ -12,7 +12,7 @@
             <li><a href="home.php" class="navigation">Home</a></li>
             <li><a href="#" class="navigation">Dashboard</a></li>
             <li><a href="#" class="navigation">About Us</a></li>
-            <li><a id="logout" href="home.php" class="logout">Logout</a></li>
+            <li><a id="#" href="home.php" class="logout">Logout</a></li>
         </div>
     </div>
     <div class="back">

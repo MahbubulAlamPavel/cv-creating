@@ -1,5 +1,6 @@
 <?php
 include_once "config.php";
+session_start();
 if(isset($_POST['submit'])) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
@@ -23,6 +24,9 @@ if(isset($_POST['submit'])) {
     }
     mysqli_close($connection);
 }
+$error = false;
+$_SESSION['loggedin'] = false;
+
 if(isset($_POST['login'])){
     $email= $_POST['email'];
     $password= $_POST['password'];
@@ -33,14 +37,26 @@ if(isset($_POST['login'])){
  if($rows = mysqli_fetch_assoc($result)){
      $db_password = $rows['password'];
      if(password_verify($password,$db_password)){
+         $_SESSION['loggedin'] = true;
          header("location: dashboard.php");
      }else{
+             $error = true;
+             $_SESSION['loggedin'] = false;
+
          echo "<script>alert('Wrong Password')</script>";
          echo("<script>window.location = 'login.php';</script>");
 
+
      }
  }else{
-     echo "<script>alert('Incorrect Email')</script>";
+     echo "<script>alert('Incorrect Email)</script>";
      echo("<script>window.location = 'login.php';</script>");
  }
 }
+
+
+        if(isset($_GET['logout'])){
+            $_SESSION['loggedin'] = false;
+            session_destroy();
+            header('location:home.php');
+        }

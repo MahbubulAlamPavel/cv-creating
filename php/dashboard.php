@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,15 +11,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
-    <div class="row-top">
-        <img class="img" src="../logo.png" alt="HTML5 Icon" align="left"/>
-        <div class="column-top">
-            <li><a href="home.php" class="navigation">Home</a></li>
-            <li><a href="#" class="navigation">Dashboard</a></li>
-            <li><a href="#" class="navigation">About Us</a></li>
-            <li><a id="logout" href="home.php" class="logout">Logout</a></li>
-        </div>
-    </div>
+<?php include "header.php"?>
     <div class="back">
 
         <div class="profile-cv">

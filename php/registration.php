@@ -9,7 +9,8 @@
 
 </head>
 <body>
-<?php include 'header.php' ?>
+<div class="body">
+    <?php include "header.php"?>
 <div class="content">
     <form class="reg-form" method="post" action="data.php" onsubmit="return validation()">
         <fieldset>
