@@ -79,6 +79,11 @@ li a{
     padding-top: 50px;
     padding-right: 250px;
 }
+.build li a:hover{
+    cursor: pointer;
+    background-color: darkcyan;
+    color: white;
+}
 
 .bottom >div{
     width: 100%;

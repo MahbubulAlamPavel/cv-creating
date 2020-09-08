@@ -2,12 +2,13 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Create Your Resume</title>
     <link rel="stylesheet" href="../style/personal-style.css" >
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
+<!--    <meta name="viewport" content="width=device-width, initial scale=1.0">-->
 </head>
+<body>
 <div class="body">
     <?php include "header.php"?>
         <div class="back">
@@ -19,10 +20,10 @@ session_start();
         <div class="left">
             <form class="form-left">
                 <p>First Name</p>
-                <input type="text" placeholder="Enter your first name">
+                <input id="fname" type="text" placeholder="Enter your first name">
 
                 <p>Email</p>
-                <input type="email" placeholder="Enter your email address">
+                <input id="email" type="email" placeholder="Enter your email address">
 
                 <p>Blood Group</p>
                 <select class="blood">
@@ -42,17 +43,15 @@ session_start();
                 <option>Unmarried</option>
                 <option>Divorced</option>
                 </select>
-            </form>
-
         </div>
 
+
         <div class="right">
-            <form class="form-right">
                 <p>Last Name</p>
-                <input type="text" placeholder="Enter your last name">
+                <input id="lname" type="text" placeholder="Enter your last name">
 
                 <p>Phone Number</p>
-                <input type="tel" placeholder="Enter your phone number">
+                <input id="phone" type="tel" placeholder="Enter your phone number">
 
                 <p>Date Of Birth</p>
                 <input type="date" placeholder="Enter your birth date">
@@ -63,20 +62,27 @@ session_start();
                     <option>Female</option>
                     <option>Other</option>
                 </select>
-            </form>
         </div>
-        <form class="form-bottom">
+
+          <div class="bottom">
             <p>Present Address</p>
-            <textarea></textarea>
+            <textarea id="address"></textarea>
 
             <p>Designation</p>
-            <input type="text" class="designation" placeholder="Enter your designation">
-        </form>
-    </div>
-        <div class="save-continue">
-             <a href="dashboard.php" class="save">Save</a>
-             <a href="career.php" class="continue">Continue</a>
+            <input id="designation" type="text" class="designation" placeholder="Enter your designation">
+          </div>
+
+
         </div>
+
+
+        <div class="save-continue">
+             <button onclick="window.location.href='dashboard.php';" class="save">Save</button>
+             <button onclick="window.location.href='career.php';" class="continue">Continue</button>
+        </div>
+
+    </form>
 </div>
+<script src="../js/main.js"></script>
 </body>
 </html>

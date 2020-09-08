@@ -5,9 +5,8 @@ session_start();
 <html>
 <head>
     <title>Create Your Resume</title>
-    <link rel="stylesheet" href="../style/dashboard-style.css" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial scale=1">
+    <link rel="stylesheet" href="../style/dashboard-style.css">
+<!--    <meta name="viewport" content="width=device-width, initial scale=1">-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
@@ -27,9 +26,28 @@ session_start();
             <a href="#" class="p-edit">Edit</a>
             </div>
 
-            <form action="/action_page.php">
-                <i class="fa fa-user-circle-o" style="font-size:130px"></i>
-            </form>
+          <div class="user-form">
+                <img class="profile-img" src="../profile.png">
+            <div class="name">
+                <span id="fname"></span>
+                <span id="lname"></span>
+            </div>
+
+              <div>
+                <span id="designation"></span><br><br>
+              </div>
+
+
+            <div class="phone">
+                <i class='fa fa-phone'></i>
+                <span id="phone"></span><br><br>
+                <i class='fa fa-envelope'></i>
+                <span id="email"></span><br><br>
+                <i class='fa fa-map-marker-alt'></i>
+                <span id="address"></span>
+            </div>
+
+            </div>
 
         </div>
 
@@ -67,4 +85,27 @@ session_start();
         </div>
 
     </div>
+<script src="../js/main.js"></script>
+<script>
+   var fname = window.localStorage.getItem('fname');
+   var lname = window.localStorage.getItem('lname');
+   var designation = window.localStorage.getItem('designation');
+   var  phone = window.localStorage.getItem('phone');
+   var email = window.localStorage.getItem('email');
+   var address = window.localStorage.getItem('address');
+
+    if(fname && lname && designation && phone && email && address){
+        document.getElementById('fname').innerText = fname;
+        document.getElementById('lname').innerText = lname;
+        document.getElementById('designation').innerText = designation;
+        document.getElementById('phone').innerText = phone;
+        document.getElementById('email').innerText = email;
+        document.getElementById('address').innerText = address;
+    }else {
+        alert('Please Fill Up All Information');
+    }
+
+</script>
 </body>
+</html>
+
