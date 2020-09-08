@@ -54,7 +54,7 @@ session_start();
                 <input id="phone" type="tel" placeholder="Enter your phone number">
 
                 <p>Date Of Birth</p>
-                <input type="date" placeholder="Enter your birth date">
+                <input id="birthDate" type="date" placeholder="Enter your birth date">
 
                 <p>Gender</p>
                 <select class="gender">
@@ -77,7 +77,7 @@ session_start();
 
 
         <div class="save-continue">
-             <button onclick="window.location.href='dashboard.php';" class="save">Save</button>
+             <button onclick="check()" class="save">Save</button>
              <button onclick="window.location.href='career.php';" class="continue">Continue</button>
         </div>
 

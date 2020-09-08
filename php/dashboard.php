@@ -101,8 +101,6 @@ session_start();
         document.getElementById('phone').innerText = phone;
         document.getElementById('email').innerText = email;
         document.getElementById('address').innerText = address;
-    }else {
-        alert('Please Fill Up All Information');
     }
 
 </script>
